@@ -79,7 +79,12 @@ Copier Coller ces lignes
     ProxyPassReverse / http://ipsrv2/
 </VirtualHost>
 ```
-## Nous modifirons les valeur de ipsrv2 une fois la second machine crée. Je vous laisse donc crée la seconde machine qui doit être identique a la première.
+## Nous modifirons les valeur de ipsrv2 une fois la second machine crée. Je vous laisse donc crée la seconde machine qui doit être identique a la première, Mais nous faisons uniquement l'ajout du phpinfo.
+
+Vous trouverez ci-dessous des images qui montre le rendu final du TP
+
+![Texte alternatif](/hosts.png "Titre de l'image")
+![Texte alternatif](/Vérifphpinfo.png "Titre de l'image")
 
 
 

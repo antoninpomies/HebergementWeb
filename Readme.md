@@ -83,7 +83,10 @@ Copier Coller ces lignes
 
 Vous trouverez ci-dessous des images qui montre le rendu final du TP
 
+### Tout d'abord le contenu du fichier hosts ou on voit bien que les deux nom pointe vers la meme IP et que le Server RP fait le reste
 ![Texte alternatif](/hosts.png "Titre de l'image")
+
+### Et ensuite les deux phpinfo.php qui on peut le voir n'ont pas la meme ip ce qui montre que c'est bien deux fichiers différents
 ![Texte alternatif](/Vérifphpinfo.png "Titre de l'image")
 
 

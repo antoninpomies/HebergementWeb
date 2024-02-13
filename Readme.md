@@ -127,6 +127,43 @@ Pour la suite du tp nous allons devoir monter une nouvelle machine virtuelle Deb
 
 ## On va ensuite passé a la configuration du Reverse Proxy
 
+Il va falloir créer deux fichiers de configuration car il nous faut autant de fichier que de serveur web.
+
+## On se rend dans le bon répertoire
+
+```cd /etc/apache2/sites-available/```
+
+## On ajouter deux fichier de configuration
+
+```touch srv1.conf srv2.conf```
+
+## Dans les deux fichiers nous allons ajouter le fichier suivant
+
+Je vous laisserait apporter les modification nécéssaire au niveau des lien et des ip qui sont renseigné.
+
+```
+<VirtualHost *:80>
+    ServerName srv1.anto.fr
+    ProxyPass / http://192.168.1.46/
+    ProxyPassReverse / http://192.168.1.46/
+</VirtualHost>
+```
+
+Une fois les deux conf dans leur fichier respectif nous allons les activés
+
+## Activation des configurations
+
+```
+sudo a2ensite srv1.conf
+sudo a2ensite srv2.conf
+```
+
+## On va ensuite redémarré apache2
+
+```systemctl restart apache2```
+
+
+
 
 
 

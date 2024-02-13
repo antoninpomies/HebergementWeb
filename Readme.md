@@ -103,7 +103,7 @@ Pour la suite du tp nous allons devoir monter une nouvelle machine virtuelle Deb
 
 ## On va donc modifié ce fichier et lui ajouter la configuration par défaut suivante
 
-```nano 000-defaut.conf```
+```nano 000-default.conf```
 
 ```
 <VirtualHost *:80>
@@ -117,6 +117,17 @@ Pour la suite du tp nous allons devoir monter une nouvelle machine virtuelle Deb
 </VirtualHost>
 
 ```
+## On va ensuite vérifié que le site est activé dans apache2
+
+```sudo a2ensite 000-default.conf```
+
+## On redémarre ensuite apache
+
+```systemctl restart apache2```
+
+## On va ensuite passé a la configuration du Reverse Proxy
+
+
 
 
 

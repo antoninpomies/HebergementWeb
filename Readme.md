@@ -89,6 +89,36 @@ Vous trouverez ci-dessous des images qui montre le rendu final du TP
 ### Et ensuite les deux phpinfo.php qui on peut le voir n'ont pas la meme ip ce qui montre que c'est bien deux fichiers différents
 ![Texte alternatif](/Vérifphpinfo.png "Titre de l'image")
 
+# Mettre en place un Reverse Proxy unique
+
+Pour la suite du tp nous allons devoir monter une nouvelle machine virtuelle Debian qui va servir uniquement de reverse proxy pour éviter de la surcharger etant donné que c'est un SPOF. Pour ce faire nous allons dans un premier temps restaurer les fichier par defaut de nos deux serveur. 
+
+## Une fois la mise en place de la nouvelle VM, on se rend ici
+
+```cd /etc/apache2/sites-enabled/```
+
+## Dans ce fichier nous allons supprimé l'ensemble des fichier et garder uniquement celui qui se nomme "000-default.conf"
+
+```rm * && touch 000-default.conf```
+
+## On va donc modifié ce fichier et lui ajouter la configuration par défaut suivante
+
+```nano 000-defaut.conf```
+
+```
+<VirtualHost *:80>
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+```
+
+
 
 
 

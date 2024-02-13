@@ -158,9 +158,19 @@ sudo a2ensite srv1.conf
 sudo a2ensite srv2.conf
 ```
 
-## On va ensuite redémarré apache2
+## On va ensuite redémarrer apache2
 
 ```systemctl restart apache2```
+
+## On va remodifié notre fichier hosts pour que l'ip ne pointe plus vers un des serveur web
+
+on va donc aller dans le répertoire suivant et modifié le fichier "hosts"
+
+```C:\Windows\System32\drivers\etc```
+
+## Je vous conseille de la modifié avec Notepad ++ pour avoir une meilleur gestion des droits
+
+
 
 
 

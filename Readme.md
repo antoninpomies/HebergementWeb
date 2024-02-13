@@ -170,7 +170,7 @@ on va donc aller dans le répertoire suivant et modifié le fichier "hosts"
 
 ## Je vous conseille de la modifié avec Notepad ++ pour avoir une meilleur gestion des droits
 
-
+Je vous laisse vous inspiré de ce qui a été fait [ ici ](https://github.com/antoninpomies/HebergementWeb#tout-dabord-le-contenu-du-fichier-hosts-ou-on-voit-bien-que-les-deux-nom-pointe-vers-la-meme-ip-et-que-le-server-rp-fait-le-reste) 
 
 
 

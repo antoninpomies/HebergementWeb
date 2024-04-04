@@ -3,7 +3,7 @@
 # Installation Reverse Proxy
 
 ### Utilisation de la commande : 
-modifié uniquement les valeur des variables : $nomconf $site $ip
+modifié uniquement les valeur des variables : ```$nomconf``` (nom du fichier de conf) ```$site``` (ex. srv1.fr) ```$ip``` (192.168.1.1 ip vers le server web)
 
 ```sudo apt-get update -y && sudo apt-get upgrade -y && nomconf=srv1.fr.conf && site=srv1.fr && ip=127.0.0.1 && apt-get install apache2 -y && sudo a2enmod proxy && sudo a2enmod proxy_http && systemctl restart apache2 && cd /etc/apache2/sites-available/ && touch $nomconf && echo -e "<VirtualHost *:80>\n    ServerName $site\n    ProxyPass / http://$ip/\n    ProxyPassReverse / http://$ip/\n</VirtualHost>" > $nomconf && a2ensite $nomconf```
 

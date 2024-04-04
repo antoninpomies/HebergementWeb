@@ -2,7 +2,7 @@
 
 # Installation Reverse Proxy
 
-```sudo apt-get update -y && sudo apt-get upgrade -y && apt-get install apache2 -y && sudo a2enmod proxy && sudo a2enmod proxy_http && systemctl restart apache2 && cd /etc/apache2/sites-available/ && touch srv1.fr.conf && echo -e "<VirtualHost *:80>\n    ServerName srv1.anto.fr\n    ProxyPass / http://127.0.0.1/\n    ProxyPassReverse / http://127.0.0.1/\n</VirtualHost>" > srv1.fr.conf && a2ensite srv1.fr.conf```
+```sudo apt-get update -y && sudo apt-get upgrade -y && nomconf=srv1.fr.conf && site=srv1.fr && ip=127.0.0.1 && apt-get install apache2 -y && sudo a2enmod proxy && sudo a2enmod proxy_http && systemctl restart apache2 && cd /etc/apache2/sites-available/ && touch $nomconf && echo -e "<VirtualHost *:80>\n    ServerName $site\n    ProxyPass / http://$ip/\n    ProxyPassReverse / http://$ip/\n</VirtualHost>" > $nomconf && a2ensite $nomconf```
 
 # Installation Server Web
 

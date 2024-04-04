@@ -1,6 +1,6 @@
 🚨 Dans un premier temps faire une snapshot de votre machine en cas de problème.
 
-# Installation Reverse Proxy
+# Commande d'installation complète
 
 ### Utilisation de la commande : 
 modifié uniquement les valeur des variables : ```$nomconf``` (nom du fichier de conf) ```$site``` (ex. srv1.fr) ```$ip``` (192.168.1.1 ip vers le server web)

@@ -29,3 +29,42 @@ iface ens33 inet static
   netmask 255.255.255.0
   gateway 192.168.1.254
 ```
+# Avoir plusieurs version de PHP sur un seul serveur Web
+installation des dépendances et des paquets nécéssaires
+```
+sudo apt update && sudo apt install -y wget gnupg2 lsb-release ca-certificates apt-transport-https
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
+```
+
+Une fois cela fait il va falloir installer les version de PHP qu'il nous faut.
+```
+sudo apt install php8.0
+sudo apt install php8.1
+```
+On installe ce qu'il faut pour que PHP tourne correctement et sans erreurs
+```
+sudo apt install php8.0-cli php8.0-fpm php8.0-mysql
+sudo apt install php8.1-cli php8.1-fpm php8.1-mysql
+```
+Enfin on active les modules nécéssaire pour que apache surpport differente version de php
+```sudo a2enmod actions fcgid alias proxy_fcgi```
+
+# Modification du VHOST du SERVEUR WEB
+```
+<VirtualHost *:80>
+    ServerName srv1.fr
+    ServerAdmin webmaster@example.com
+    DocumentRoot /var/www/html
+
+    <FilesMatch \.php$>
+      # For Apache version 2.4.10 and above, use SetHandler to run PHP as a fastCGI process server
+      SetHandler "proxy:unix:/run/php/php7.0-fpm.sock|fcgi://localhost"
+    </FilesMatch>
+
+</VirtualHost>
+```
+On pense bien evidemment a faire les changement au niveau de la version et de l'url du site (srv1.fr).
+
+Une fois cela fait on peut redemarrer le service apache2 et constaté le bon fonctionnement du site. pour la configuration du fichier hosts (DNS Corrompu) voir dans l'autre procédure.

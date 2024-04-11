@@ -67,4 +67,4 @@ Enfin on active les modules nécéssaire pour que apache surpport differente ver
 ```
 On pense bien evidemment a faire les changement au niveau de la version et de l'url du site (srv1.fr).
 
-Une fois cela fait on peut redemarrer le service apache2 et constaté le bon fonctionnement du site. pour la configuration du fichier hosts (DNS Corrompu) voir dans l'autre procédure.
+Une fois cela fait on peut redemarrer le service apache2 et constaté le bon fonctionnement du site. pour la configuration du fichier hosts (DNS Corrompu) voir dans l'autre procédure. [ici](https://github.com/antoninpomies/HebergementWeb/tree/master?tab=readme-ov-file#tout-dabord-le-contenu-du-fichier-hosts-ou-on-voit-bien-que-les-deux-nom-pointe-vers-la-meme-ip-et-que-le-server-rp-fait-le-reste)
